@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <script>
+        function calcular() {
+
+            num=document.getElementById("num").value;
+
+            var num2ble=num*2;
+            var num3ple=num*3;
+            var num4ple=num*4;
+
+            var respuesta="doble: "+num2ble+" triple: "+num3ple+" quadruple: "+num4ple
+
+            alert(respuesta);
+            
+        }
+    </script>
+</head>
+<body>
+    <p>Introduce un numero</p>
+    <input type="text" id="num">
+    <button onclick="calcular()" >Calcular</button>
+</body>
+</html>

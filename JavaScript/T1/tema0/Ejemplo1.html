@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejemplo1</title>
+</head>
+<body>
+    <p id="mitxt">Me encata Js</p>
+    <button type="button" onclick="cambiaEstilo()">Pulsa para cambiar el estilo</button>
+    <button type="button" onclick="cambiacontenido()">Pulsa para cambiar el contenido</button>
+    <script>
+        function cambiaEstilo(){
+            var x=document.getElementById("mitxt");
+            x.style.fontSize='20px';
+            x.style.color='green';
+        }
+
+        function cambiacontenido(){
+            var x=document.getElementById("mitxt").textContent="Cambiando el contenido";
+            
+        }
+
+
+    </script>
+</body>
+</html>

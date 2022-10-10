@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejemplo 3</title>
+</head>
+<body>
+    <h3>Preguntitaas:</h3>
+    <ul>
+        <li id="1">¿Es mejor España que 💩francia💩?
+        
+            <button type="button" onclick="comprobar('1','true')">Si</button>
+            <button type="button" onclick="comprobar('1','false')">No</button>
+        </li>   
+        <br>
+        <li id="2">¿Es este el mejor JavaScript del mundo?
+        
+            <button type="button" onclick="comprobar('2','true')">Si</button>
+            <button type="button" onclick="comprobar('2','false')">No</button>
+        </li>    
+        <br>
+        <li id="3">¿Voy a suspender?
+        
+            <button type="button" onclick="comprobar('3','false')">Si</button>
+            <button type="button" onclick="comprobar('3','true')">No</button>
+        </li>  
+        <br>
+        <li id="4">¿7 son muchas preguntas?
+        
+            <button type="button" onclick="comprobar('4','true')">Si</button>
+            <button type="button" onclick="comprobar('4','false')">No</button>
+        </li>  
+        <br>
+        <li id="5">¿Esta es la clase mas fresquita del mundo?
+        
+            <button type="button" onclick="comprobar('5','false')">Si</button>
+            <button type="button" onclick="comprobar('5','true')">No</button>
+        </li> 
+        <br>
+        <li id="6">¿Es el cielo morado?
+        
+            <button type="button" onclick="comprobar('6','flase')">Si</button>
+            <button type="button" onclick="comprobar('6','true')">No</button>
+        </li>  
+        <br>
+        <li id="7">¿Es facil JavaScript?
+        
+            <button type="button" onclick="comprobar('7','true')">Si</button>
+            <button type="button" onclick="comprobar('7','false')">No</button>
+        </li>   
+    </ul>
+
+
+
+    <script>
+        function comprobar(pregunta,respuesta) {
+            var pregunta=document.getElementById(pregunta);
+            pregunta.style.color="red";
+            if (respuesta=='true') {
+                pregunta.style.color='green';
+            }
+        }
+    </script>
+</body>
+</html>

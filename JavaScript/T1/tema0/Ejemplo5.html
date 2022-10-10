@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo5</title>
+</head>
+<body>
+    <p id="msg">Bienvenido a mi pagina</p>
+
+    <button type="button" onclick="idioma('espanol')">Idioma Español</button>
+    <button type="button" onclick="idioma('ingles')">Idioma Ingles</button>
+    <button type="button" onclick="idioma('ruso')">Idioma Ruso</button>
+
+    <script>
+        function idioma(lengua) {
+            var parrafo = document.getElementById('msg');
+
+            switch (lengua) {
+                case "espanol":
+                    parrafo.textContent="Bienvenido a mi pagina";
+                    break;
+                case "ingles":
+                parrafo.textContent="Welcome to my web";
+                    break;
+                case "ruso":
+                parrafo.textContent="︻╦╤─   Добро пожаловать на мой сайт   ︻╦╤─";
+                    break;
+            
+                default:
+                    break;
+            }
+            
+        }
+    </script>
+</body>
+</html>
