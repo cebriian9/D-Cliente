@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio10</title>
+    <script>
+        function calcular() {
+            let num=document.getElementById("num");
+            let base=document.getElementById("base");
+
+            parseInt(num);
+
+            let resultado=num.toString(base);
+
+            alert(resultado);
+
+            resultado=document.getElementById("resultado").textContent=resultado;
+        }
+    </script>
+</head>
+<body>
+    <p>Introduce un numero:</p>
+    <input type="number" id="num">
+    <input type="number" id="base">
+    
+    <button onclick="calcular()">Calcular Bases</button>
+
+    <span id="resultado"> </span>
+</body>
+</html>
