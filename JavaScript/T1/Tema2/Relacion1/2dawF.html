@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+    <script>
+        function calcular() {
+
+            radio=document.getElementById("radio").value;
+
+            var longitud=2*Math.PI*radio;
+            var area=Math.PI*radio*radio;
+
+            longitud = document.getElementById("longitud").textContent=longitud;
+            area = document.getElementById("area").textContent=area;
+            
+        }
+    </script>
+</head>
+<body>
+    <p>Introduce el radio de tu circunferencia</p>
+    <input id="radio">
+    <button onclick="calcular()">Calcular longitud y area</button>
+
+    <nav>
+        longitud: <span id="longitud"> </span> <br>
+        area: <span id="area"> </span> 
+    </nav>
+</body>
+</html>

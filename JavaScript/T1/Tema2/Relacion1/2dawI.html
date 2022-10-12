@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio9</title>
+    <script>
+        function calcular() {
+            let num=document.getElementById("num").value;
+
+            let decimal= parseInt(num,8).toString(10);
+            decimal = document.getElementById("decimal").innerHTML=decimal;
+        }
+    </script>
+</head>
+<body>
+    <p>Introduce un numero en base 8:</p>
+    <input type="number" id="num">
+    <button onclick="calcular()">Calcular Bases</button>
+
+    <p>Base 10: <span id="decimal"> </span></p>
+</body>
+</html>
