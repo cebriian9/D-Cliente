@@ -7,10 +7,10 @@
     <title>Ejercicio9</title>
     <script>
         function calcular() {
-            let num=parseInt(document.getElementById("num"));
+            let num=document.getElementById("num").value;
 
-            let decimal= num.toString(10);
-            console.log(decimal);
+            let decimal= parseInt(num,8).toString(10);
+            decimal = document.getElementById("decimal").innerHTML=decimal;
         }
     </script>
 </head>
@@ -18,5 +18,7 @@
     <p>Introduce un numero en base 8:</p>
     <input type="number" id="num">
     <button onclick="calcular()">Calcular Bases</button>
+
+    <p>Base 10: <span id="decimal"> </span></p>
 </body>
 </html>

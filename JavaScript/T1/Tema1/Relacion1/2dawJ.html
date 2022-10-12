@@ -7,14 +7,10 @@
     <title>Ejercicio10</title>
     <script>
         function calcular() {
-            let num=document.getElementById("num");
-            let base=document.getElementById("base");
+            let num=document.getElementById("num").value;
+            let base=document.getElementById("base").value;
 
-            parseInt(num);
-
-            let resultado=num.toString(base);
-
-            alert(resultado);
+            let resultado=parseInt(num).toString(base);
 
             resultado=document.getElementById("resultado").textContent=resultado;
         }

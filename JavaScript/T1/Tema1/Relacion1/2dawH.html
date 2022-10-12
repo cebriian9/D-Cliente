@@ -7,18 +7,20 @@
     <title>Ejercicio8</title>
     <script>
         function calcular() {
-
-            num=document.getElementById("num").value;
+            
+            let num=document.getElementById("num").value;
 
             
-
-            let b16=num.toString(16);
-            let b5=num.toString(5);
-
-            var down = document.getElementById("base 16");
             
-            down = document.getElementById("b16").textContent=b16;
-            b5 = document.getElementById("b5").textContent=b5;
+            
+
+            let b16=parseInt(num).toString(16);
+            let b5=parseInt(num).toString(2);
+
+           
+            
+            b16 = document.getElementById("b16").innerHTML=b16;
+            b5 = document.getElementById("b5").innerHTML=b5;
             
         }
     </script>
