@@ -14,21 +14,23 @@
 
     <script>
 
+        //creo un array para guardar todas las medidas de todos los triangulos
         const ladosTriangulos = [];
         function calcular() {
             let lado = document.getElementsByName('array[]');
 
-
+            //uso este for para asignar cada celda del array a cada valor de cada triangulo
             for (let i = 0; i < lado.length; i++) {
                 ladosTriangulos[i] = lado[i];
             }
 
+            //inicializo las variables para el conteo de la cantidad de cada tipo hay 
             let escaleno = 0;
             let isosceles = 0;
             let equilatero = 0;
 
-            
-            //lados 0,1,2 (triangulo 1)
+
+            //lados 0,1,2 (triangulo 1) y compruebo que tipo es
             if (ladosTriangulos[0].value != ladosTriangulos[1].value &&
                 ladosTriangulos[1].value != ladosTriangulos[2].value &&
                 ladosTriangulos[0].value != ladosTriangulos[2].value) {
@@ -43,7 +45,8 @@
                 equilatero++;
                 isosceles--;//contrarrestar el else de isosceles
             }
-            //lados 3,4,5 (triangulo 2)
+            
+            //lados 3,4,5 (triangulo 2) y compruebo que tipo es
             if (ladosTriangulos[3].value != ladosTriangulos[4].value &&
                 ladosTriangulos[4].value != ladosTriangulos[5].value &&
                 ladosTriangulos[3].value != ladosTriangulos[5].value) {
@@ -59,7 +62,7 @@
                 isosceles--;//contrarrestar el else de isosceles
             }
 
-            //lados 6,7,8 (triangulo 3)
+            //lados 6,7,8 (triangulo 3) y compruebo que tipo es
             if (ladosTriangulos[6].value != ladosTriangulos[7].value &&
                 ladosTriangulos[7].value != ladosTriangulos[8].value &&
                 ladosTriangulos[6].value != ladosTriangulos[8].value) {
@@ -75,7 +78,7 @@
                 isosceles--;//contrarrestar el else de isosceles
             }
 
-            //lados 9,10,11 (triangulo 4)
+            //lados 9,10,11 (triangulo 4) y compruebo que tipo es
             if (ladosTriangulos[9].value != ladosTriangulos[10].value &&
                 ladosTriangulos[10].value != ladosTriangulos[11].value &&
                 ladosTriangulos[9].value != ladosTriangulos[11].value) {
@@ -90,25 +93,25 @@
                 equilatero++;
                 isosceles--; //contrarrestar el else de isosceles
             }
-            
+
 
             //recuento tipos
             document.getElementById("equi").innerHTML = equilatero;
             document.getElementById("isos").innerHTML = isosceles;
             document.getElementById("esca").innerHTML = escaleno;
 
-            let menor= equilatero;
-            let Smenor="equilatero";
-            if (isosceles<menor) {
-                menor=isosceles;
-                Smenor="isosceles"
-            }if (escaleno<menor) {
-                menor=escaleno;
-                Smenor="escaleno"
+            //compruebo cual es menor y lo muestro
+            let menor = equilatero;
+            let Smenor = "equilatero";
+            if (isosceles < menor) {
+                menor = isosceles;
+                Smenor = "isosceles"
+            } if (escaleno < menor) {
+                menor = escaleno;
+                Smenor = "escaleno"
             }
 
-            document.getElementById("menor").innerHTML=Smenor;
-
+            document.getElementById("menor").innerHTML = Smenor;
 
         }
 
