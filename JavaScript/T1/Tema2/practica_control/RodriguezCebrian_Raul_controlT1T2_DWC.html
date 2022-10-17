@@ -27,6 +27,7 @@
             let isosceles = 0;
             let equilatero = 0;
 
+            
             //lados 0,1,2 (triangulo 1)
             if (ladosTriangulos[0].value != ladosTriangulos[1].value &&
                 ladosTriangulos[1].value != ladosTriangulos[2].value &&
@@ -40,8 +41,8 @@
             if (ladosTriangulos[0].value == ladosTriangulos[1].value == ladosTriangulos[2].value) {
                 document.getElementById("tipo1").innerHTML = "Equilatero (3=)";
                 equilatero++;
+                isosceles--;//contrarrestar el else de isosceles
             }
-
             //lados 3,4,5 (triangulo 2)
             if (ladosTriangulos[3].value != ladosTriangulos[4].value &&
                 ladosTriangulos[4].value != ladosTriangulos[5].value &&
@@ -55,6 +56,7 @@
             if (ladosTriangulos[3].value == ladosTriangulos[4].value == ladosTriangulos[5].value) {
                 document.getElementById("tipo2").innerHTML = "Equilatero (3=)";
                 equilatero++;
+                isosceles--;//contrarrestar el else de isosceles
             }
 
             //lados 6,7,8 (triangulo 3)
@@ -70,6 +72,7 @@
             if (ladosTriangulos[6].value == ladosTriangulos[7].value == ladosTriangulos[8].value) {
                 document.getElementById("tipo3").innerHTML = "Equilatero (3=)";
                 equilatero++;
+                isosceles--;//contrarrestar el else de isosceles
             }
 
             //lados 9,10,11 (triangulo 4)
@@ -85,12 +88,26 @@
             if (ladosTriangulos[9].value == ladosTriangulos[10].value == ladosTriangulos[11].value) {
                 document.getElementById("tipo4").innerHTML = "Equilatero (3=)";
                 equilatero++;
+                isosceles--; //contrarrestar el else de isosceles
             }
+            
 
             //recuento tipos
             document.getElementById("equi").innerHTML = equilatero;
             document.getElementById("isos").innerHTML = isosceles;
             document.getElementById("esca").innerHTML = escaleno;
+
+            let menor= equilatero;
+            let Smenor="equilatero";
+            if (isosceles<menor) {
+                menor=isosceles;
+                Smenor="isosceles"
+            }if (escaleno<menor) {
+                menor=escaleno;
+                Smenor="escaleno"
+            }
+
+            document.getElementById("menor").innerHTML=Smenor;
 
 
         }
@@ -140,6 +157,8 @@
     <p>Equilateros: 3= <span id="equi"></span></p>
     <p>Isosceles: 2= <span id="isos"></span></p>
     <p>Escaleno: 0= <span id="esca"></span></p>
+    <br>
+    <p>Menor Tipo:<span id="menor"></span></p>
 
     <button onclick="calcular()">Ver tipos</button>
 </body>
