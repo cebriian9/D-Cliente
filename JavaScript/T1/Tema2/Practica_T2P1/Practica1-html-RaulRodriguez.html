@@ -1,13 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practica 1</title>
-    <script src="Practica1-JS-RaulRodriguez.js"></script>
+    <style>
+        td{
+            padding: 20px;
+        }
+    </style>
 </head>
+
 <body>
-    
+
+    <table>
+        <td>
+            <script>
+                document.write("Tabla de multiplicar del 7 <br>")
+
+                for (let i = 0; i <= 10; i++) {
+                    document.write("7 x " + i + " = " + (7 * i) + " <br>")
+
+                }
+            </script>
+        </td>
+        <td>
+            <script>
+                document.write("Tabla de sumar del 8 <br>")
+
+                let numero = 0;
+                while (numero <= 10) {
+                    document.write("8 + " + numero + " = " + (8 + numero) + " <br>")
+                    numero++;
+                }
+            </script>
+        </td>
+        <td>
+            <script>
+                document.write("Tabla del 9 <br>")
+
+                numero = 0;
+                do {
+                    document.write("9 / " + numero + " = " + (9 / numero) + " <br>")
+                    numero++;
+                } while (numero <= 10)
+            </script>
+        </td>
+    </table>
+
+    <div>
+        <script>
+            let num=10;
+            num = num<<1;
+
+            document.write("10 desplazando 1 bit a la izquierda es: "+num +"<br>");
+
+            num=10;
+            num=num>>1;
+
+            document.write("10 desplazando 1 bit a la derecha es: "+num+"<br>");
+
+            document.write("<br>");
+
+            let num1=125>>3;
+            document.write("125/8= "+num1+"<br>");
+
+            num1=40<<2;
+            document.write("40x4= "+num1+"<br>");
+
+            num1=25>>1;
+            document.write("25/2= "+num1+"<br>");
+
+            num1=10<<4;
+            document.write("10x16= "+num1+"<br>");
+            
+        </script>
+    </div>
+
+
 </body>
+
 </html>
