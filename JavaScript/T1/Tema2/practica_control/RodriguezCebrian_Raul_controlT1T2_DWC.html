@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica control tema2</title>
+    <style>
+        td {
+            padding: 20px;
+        }
+    </style>
+
+    <script>
+        
+        const ladosTriangulos=[];
+        function calcular() {
+            let lado = document.getElementsByName('array[]');
+            
+            
+            for (let i = 0; i < lado.length; i++) {
+               ladosTriangulos[i] = lado[i];               
+            }
+
+            //lados 0,1,2
+            if (ladosTriangulos[0].value==ladosTriangulos[1].value==ladosTriangulos[2].value) {
+                document.getElementById("tipo1").innerHTML="todos";
+                console.log("todos");
+            }if (ladosTriangulos[0].value!=ladosTriangulos[1].value && ladosTriangulos[1].value !=ladosTriangulos[2].value && ladosTriangulos[0].value!=ladosTriangulos[2].value ) {
+                document.getElementById("tipo1").innerHTML="ninguno";
+                console.log("ninguno");
+            }else{
+                document.getElementById("tipo1").innerHTML="2 solo";
+                console.log("2 solo");
+            }
+
+            //lados 3,4,5
+            if (ladosTriangulos[3].value==ladosTriangulos[4].value==ladosTriangulos[5].value) {
+                document.getElementById("tipo2").innerHTML="Equilatero";
+            }if (ladosTriangulos[3].value!=ladosTriangulos[4].value && ladosTriangulos[4].value !=ladosTriangulos[5].value && ladosTriangulos[3].value!=ladosTriangulos[5].value ) {
+                document.getElementById("tipo2").innerHTML="Escaleno";
+            }else{
+                document.getElementById("tipo2").innerHTML="Isosceles";
+            }
+            //lados 6,7,8
+            if (ladosTriangulos[6].value==ladosTriangulos[7].value==ladosTriangulos[8].value) {
+                document.getElementById("tipo3").innerHTML="Equilatero";
+            }if (ladosTriangulos[6].value!=ladosTriangulos[7].value && ladosTriangulos[7].value !=ladosTriangulos[8].value && ladosTriangulos[6].value!=ladosTriangulos[8].value ) {
+                document.getElementById("tipo3").innerHTML="Escaleno";
+            }else{
+                document.getElementById("tipo3").innerHTML="Isosceles";
+            }
+            //lados 9,10,11
+            if (ladosTriangulos[9].value==ladosTriangulos[10].value==ladosTriangulos[11].value) {
+                document.getElementById("tipo4").innerHTML="Equilatero";
+            }if (ladosTriangulos[9].value!=ladosTriangulos[10].value && ladosTriangulos[10].value !=ladosTriangulos[11].value && ladosTriangulos[9].value!=ladosTriangulos[11].value ) {
+                document.getElementById("tipo4").innerHTML="Escaleno";
+            }else{
+                document.getElementById("tipo4").innerHTML="Isosceles";
+            }
+            
+            
+        }
+
+        
+    </script>
+
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Triangulo 1</td>
+            <td>Triangulo 2</td>
+            <td>Triangulo 3</td>
+            <td>Triangulo 4</td>
+        </tr>
+        <tr>
+            <td>
+                Lado 1 <input type="number" name="array[]"><br>
+                Lado 2 <input type="number" name="array[]"><br>
+                Lado 3 <input type="number" name="array[]"><br>
+            </td>
+            <td>
+                Lado 1 <input type="number" name="array[]"><br>
+                Lado 2 <input type="number" name="array[]"><br>
+                Lado 3 <input type="number" name="array[]"><br>
+            </td>
+            <td>
+                Lado 1 <input type="number" name="array[]"><br>
+                Lado 2 <input type="number" name="array[]"><br>
+                Lado 3 <input type="number" name="array[]"><br>
+            </td>
+            <td>
+                Lado 1 <input type="number" name="array[]"><br>
+                Lado 2 <input type="number" name="array[]"><br>
+                Lado 3 <input type="number" name="array[]"><br>
+            </td>
+        </tr>
+        <tr>
+            <td>Tipo: <span id="tipo1"></span></td>
+            <td>Tipo: <span id="tipo2"></span></td>
+            <td>Tipo: <span id="tipo3"></span></td>
+            <td>Tipo: <span id="tipo4"></span></td>
+        </tr>
+    </table>
+
+    <button onclick="calcular()">Ver tipos</button>
+</body>
+
+</html>
