@@ -13,57 +13,88 @@
     </style>
 
     <script>
-        
-        const ladosTriangulos=[];
+
+        const ladosTriangulos = [];
         function calcular() {
             let lado = document.getElementsByName('array[]');
-            
-            
+
+
             for (let i = 0; i < lado.length; i++) {
-               ladosTriangulos[i] = lado[i];               
+                ladosTriangulos[i] = lado[i];
             }
 
-            //lados 0,1,2
-            if (ladosTriangulos[0].value==ladosTriangulos[1].value==ladosTriangulos[2].value) {
-                document.getElementById("tipo1").innerHTML="todos";
-                console.log("todos");
-            }if (ladosTriangulos[0].value!=ladosTriangulos[1].value && ladosTriangulos[1].value !=ladosTriangulos[2].value && ladosTriangulos[0].value!=ladosTriangulos[2].value ) {
-                document.getElementById("tipo1").innerHTML="ninguno";
-                console.log("ninguno");
-            }else{
-                document.getElementById("tipo1").innerHTML="2 solo";
-                console.log("2 solo");
+            let escaleno = 0;
+            let isosceles = 0;
+            let equilatero = 0;
+
+            //lados 0,1,2 (triangulo 1)
+            if (ladosTriangulos[0].value != ladosTriangulos[1].value &&
+                ladosTriangulos[1].value != ladosTriangulos[2].value &&
+                ladosTriangulos[0].value != ladosTriangulos[2].value) {
+                document.getElementById("tipo1").innerHTML = "Escaleno (0=)";
+                escaleno++;
+            } else {
+                document.getElementById("tipo1").innerHTML = "Isosceles (2=)";
+                isosceles++;
+            }
+            if (ladosTriangulos[0].value == ladosTriangulos[1].value == ladosTriangulos[2].value) {
+                document.getElementById("tipo1").innerHTML = "Equilatero (3=)";
+                equilatero++;
             }
 
-            //lados 3,4,5
-            if (ladosTriangulos[3].value==ladosTriangulos[4].value==ladosTriangulos[5].value) {
-                document.getElementById("tipo2").innerHTML="Equilatero";
-            }if (ladosTriangulos[3].value!=ladosTriangulos[4].value && ladosTriangulos[4].value !=ladosTriangulos[5].value && ladosTriangulos[3].value!=ladosTriangulos[5].value ) {
-                document.getElementById("tipo2").innerHTML="Escaleno";
-            }else{
-                document.getElementById("tipo2").innerHTML="Isosceles";
+            //lados 3,4,5 (triangulo 2)
+            if (ladosTriangulos[3].value != ladosTriangulos[4].value &&
+                ladosTriangulos[4].value != ladosTriangulos[5].value &&
+                ladosTriangulos[3].value != ladosTriangulos[5].value) {
+                document.getElementById("tipo2").innerHTML = "Escaleno (0=)";
+                escaleno++;
+            } else {
+                document.getElementById("tipo2").innerHTML = "Isosceles (2=)";
+                isosceles++;
             }
-            //lados 6,7,8
-            if (ladosTriangulos[6].value==ladosTriangulos[7].value==ladosTriangulos[8].value) {
-                document.getElementById("tipo3").innerHTML="Equilatero";
-            }if (ladosTriangulos[6].value!=ladosTriangulos[7].value && ladosTriangulos[7].value !=ladosTriangulos[8].value && ladosTriangulos[6].value!=ladosTriangulos[8].value ) {
-                document.getElementById("tipo3").innerHTML="Escaleno";
-            }else{
-                document.getElementById("tipo3").innerHTML="Isosceles";
+            if (ladosTriangulos[3].value == ladosTriangulos[4].value == ladosTriangulos[5].value) {
+                document.getElementById("tipo2").innerHTML = "Equilatero (3=)";
+                equilatero++;
             }
-            //lados 9,10,11
-            if (ladosTriangulos[9].value==ladosTriangulos[10].value==ladosTriangulos[11].value) {
-                document.getElementById("tipo4").innerHTML="Equilatero";
-            }if (ladosTriangulos[9].value!=ladosTriangulos[10].value && ladosTriangulos[10].value !=ladosTriangulos[11].value && ladosTriangulos[9].value!=ladosTriangulos[11].value ) {
-                document.getElementById("tipo4").innerHTML="Escaleno";
-            }else{
-                document.getElementById("tipo4").innerHTML="Isosceles";
+
+            //lados 6,7,8 (triangulo 3)
+            if (ladosTriangulos[6].value != ladosTriangulos[7].value &&
+                ladosTriangulos[7].value != ladosTriangulos[8].value &&
+                ladosTriangulos[6].value != ladosTriangulos[8].value) {
+                document.getElementById("tipo3").innerHTML = "Escaleno (0=)";
+                escaleno++;
+            } else {
+                document.getElementById("tipo3").innerHTML = "Isosceles (2=)";
+                isosceles++;
             }
-            
-            
+            if (ladosTriangulos[6].value == ladosTriangulos[7].value == ladosTriangulos[8].value) {
+                document.getElementById("tipo3").innerHTML = "Equilatero (3=)";
+                equilatero++;
+            }
+
+            //lados 9,10,11 (triangulo 4)
+            if (ladosTriangulos[9].value != ladosTriangulos[10].value &&
+                ladosTriangulos[10].value != ladosTriangulos[11].value &&
+                ladosTriangulos[9].value != ladosTriangulos[11].value) {
+                document.getElementById("tipo4").innerHTML = "Escaleno (0=)";
+                escaleno++;
+            } else {
+                document.getElementById("tipo4").innerHTML = "Isosceles (2=)";
+                isosceles++;
+            }
+            if (ladosTriangulos[9].value == ladosTriangulos[10].value == ladosTriangulos[11].value) {
+                document.getElementById("tipo4").innerHTML = "Equilatero (3=)";
+                equilatero++;
+            }
+
+            //recuento tipos
+            document.getElementById("equi").innerHTML = equilatero;
+            document.getElementById("isos").innerHTML = isosceles;
+            document.getElementById("esca").innerHTML = escaleno;
+
+
         }
 
-        
     </script>
 
 </head>
@@ -105,6 +136,10 @@
             <td>Tipo: <span id="tipo4"></span></td>
         </tr>
     </table>
+
+    <p>Equilateros: 3= <span id="equi"></span></p>
+    <p>Isosceles: 2= <span id="isos"></span></p>
+    <p>Escaleno: 0= <span id="esca"></span></p>
 
     <button onclick="calcular()">Ver tipos</button>
 </body>
