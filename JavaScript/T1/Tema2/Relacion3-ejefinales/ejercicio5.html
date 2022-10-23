@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio5</title>
+</head>
+<body>
+    <script>
+       function cambio() {
+        document.getElementById("titulo").innerHTML="hola";
+       }
+
+       function cambio2() {
+        document.getElementById("subtitulo").innerHTML="<b style=' color:green;'>esto cambió<b>"
+       }
+
+       function cambio3() {
+        document.getElementById("texto").innerHTML="<img src='https://cdn-icons-png.flaticon.com/512/2175/2175198.png'>"
+       }
+    </script>
+
+    <h3 onmousemove="cambio()" id="titulo">titulo</h3>
+
+    <p onmouseout="cambio2()" id="subtitulo">subtitulo</p>
+
+    <p onblur="cambio3()" id="texto">texto cualquiera</p>
+
+    <button id="boton" onblur="cambio3()">Boton</button>
+
+    
+    
+</body>
+</html>
