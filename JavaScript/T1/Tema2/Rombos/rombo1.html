@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rombo1</title>
+</head>
+
+<body>
+
+
+    <button onclick="rombo()">Rombo normal</button> <button onclick="romboH()">Rombo hueco</button>
+    <input type="number" id="tamano">
+
+    <script>
+
+
+        function rombo() {
+
+            let tamano = document.getElementById("tamano").value;
+
+            //----rombo-relleno-------
+
+            //------mitad arriba------
+            for (let i = 0; i < tamano; i++) {
+                for (let h = tamano; h > i; h--) {
+                    document.write("&nbsp");
+                }
+                for (let j = 0; j < i; j++) {
+                    document.write("*");
+                }
+                document.write("<br>");
+            }
+
+            //----mitad abajo
+            for (let i = tamano; i > 0; i--) {
+                for (let h = tamano; h > i; h--) {
+                    document.write("&nbsp");
+                }
+                for (let j = 0; j < i; j++) {
+                    document.write("*");
+                }
+                document.write("<br>");
+            }
+        }
+    </script>
+
+    <script>
+        function romboH() {
+
+            let tamano = document.getElementById("tamano").value;
+
+            //----rombo-hueco-------
+            for (let i = 0; i < tamano; i++) {
+                for (let h = tamano; h > i; h--) {
+                    document.write("&nbsp");
+                }
+                for (let j = 0; j < i; j++) {
+                    if (j == 0 || j == (i - 1)) {
+                        document.write("*");
+                    } else {
+                        document.write("&nbsp&nbsp");
+                    }
+                }
+                document.write("<br>");
+            }
+
+            //----mitad abajo
+            for (let i = tamano; i > 0; i--) {
+                for (let h = tamano; h > i; h--) {
+                    document.write("&nbsp");
+                }
+                for (let j = 0; j < i; j++) {
+                    if (j == 0 || j == (i - 1)) {
+                        document.write("*");
+                    } else {
+                        document.write("&nbsp&nbsp");
+                    }
+                }
+                document.write("<br>");
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
