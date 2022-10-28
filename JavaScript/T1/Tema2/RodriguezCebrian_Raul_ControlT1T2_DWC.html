@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control_Triangulos</title>
+    <script>
+        //escaleno 0 lados =
+        //isosceles 2 lados =
+        //equilatero 3 lados = 
+        let solucion = "";
+        let NumEscalenos = 0;
+        let NumIsosceles = 0;
+        let NumEquilatero = 0;
+        for (let i = 0; i < 4; i++) {
+            alert("Triangulo " + (i + 1) + ":");
+            let lado1 = 0;
+            let lado2 = 0;
+            let lado3 = 0;
+            //----comprobar-si-mete-numeros-positivos-de-cada-lado----
+            //----lado-1---
+            let salir = false;
+            while (salir == false) {
+                lado1 = prompt("Ingrese el primer lado");
+                if (lado1 > 0 && lado1!=/[A-Z]/) {
+                    salir = true;//--comprueba-si-es-mayor-de-0-sino-mensaje-de-error
+                } else {
+                    alert("Solo numero positivos");
+                }
+            }
+
+            //----lado-2---
+            salir = false;
+            while (salir == false) {
+                lado2 = prompt("Ingrese el segundo lado");
+                if (lado2 > 0 && lado2!=/[A-Z]/) {
+                    salir = true;//--comprueba-si-es-mayor-de-0-sino-mensaje-de-error
+                } else {
+                    alert("Solo numero positivos");
+                }
+            }
+
+            //----lado-3---
+            salir = false;
+            while (salir == false) {
+                lado3 = prompt("Ingrese el tercer lado");
+                if (lado3 > 0 && lado3!=/[A-Z]/) {
+                    salir = true;//--comprueba-si-es-mayor-de-0-sino-mensaje-de-error
+                } else {
+                    alert("Solo numero positivos");
+                }
+            }
+
+            //----Comporbamos-si-todos-los-lados-son-iguales------
+            if (lado1 == lado2 && lado2 == lado3 && lado1 == lado3) {
+                solucion += "Triangulo " + (i + 1) + " es Equilatero\n";
+                NumEquilatero++;
+                console.log("if 1");//depuracion mia
+
+                //----Comporbamos-si-todos-los-lados-son-diferentes------
+            } else if (lado1 != lado2 && lado2 != lado3 && lado1 != lado3) {
+                solucion += "Triangulo " + (i + 1) + " es Escaleno\n";
+                console.log("if 2");//depuracion mia
+                NumEscalenos++;
+
+                //----Por-descarte-queda-este-tipo-------    
+            } else {
+                solucion += "Triangulo " + (i + 1) + " es Isosceles\n";
+                console.log("if 3");//depuracion mia
+                NumIsosceles++;
+            }
+        }
+
+        //-----comprobar-menor-------
+        let min = "";
+
+        if (NumEquilatero < NumIsosceles) {
+            min = "Equilateros";
+        } else if (NumIsosceles < NumEscalenos) {
+            min = "Isosceles";
+        } else if (NumEscalenos < NumEquilatero) {
+            min = "Escalenos";
+        }
+
+        //----fin-comprobacion--------
+
+        //----muestra-solucion---
+        alert(solucion);
+        alert("hubo un total de:\n "
+            + NumEscalenos + " Escalenos \n"
+            + NumIsosceles + " Isosceles \n"
+            + NumEquilatero + " Equilateros \n"
+            + "Claro perdedor: los " + min);
+    </script>
+</head>
+<body>
+
+</body>
+
+</html>
