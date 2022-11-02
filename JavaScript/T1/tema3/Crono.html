@@ -2,35 +2,42 @@
 <html>
 
 <head>
-  <title>Reloj</title>
+    <title>Reloj</title>
 </head>
 
 <body>
-  <div id="laHora​"></div>
-  <script>
-    function crono() {
-      var elCrono;
-      var miFecha = new Date();
-      var horas = miFecha.getHours();
-      var minutos = miFecha.getMinutes();
-      var segundos = miFecha.getSeconds();
-      if (horas > 12) {
-        ampm = 'pm';
-        horas -= 12;
-      } else {
-        ampm = 'am';
-      }
-      if (horas < 10) { horas = '0' + horas; }
-      if (minutos < 10) { minutos = '0' + minutos; }
-      if (segundos < 10) { segundos = '0' + segundos; }
+    <div id="laHora​"></div>
+    <script>
+        function crono() {
+            let elCrono;
+            let miFecha = new Date();
+            let horas = miFecha.getHours();
+            let minutos = miFecha.getMinutes();
+            let segundos = miFecha.getSeconds();
+            if (horas > 12) {
+                ampm = 'pm';
+                horas -= 12;
+            } else {
+                ampm = 'am';
+            }
+            if (horas < 10) {
+                horas = '0' + horas;
+            }
+            if (minutos < 10) {
+                minutos = '0' + minutos;
+            }
+            if (segundos < 10) {
+                segundos = '0' + segundos;
+            }
 
-      var texto = document.getElementById('laHora​');
-      texto.innerHTML = horas + ':' + minutos + ':' + segundos + ' ' + ampm;
-    }
-    window.onload = function () {
-      elCrono = setInterval(crono, 1000);
-    }
-  </script>
+            let texto = document.getElementById('laHora​');
+            texto.innerHTML = horas + ':' + minutos + ':' + segundos + ' ' + ampm;
+        }
+
+        window.onload = function () {
+            elCrono = setInterval(crono, 1000);
+        }
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aaa</title>
+    <script>
+        let segundos = 0;
+        let minutos = 0;
+        let pause = false;
+
+        function parar() {
+            pause = true;
+        }
+
+        function continuar() {
+            pause = false;
+        }
+
+        function crono() {
+            if (pause == false) {
+                if (segundos == 60) {
+                    minutos++
+                    segundos = 0
+                } else {
+                    segundos++
+                    minutos==minutos
+                }
+
+                if (minutos < 10) {
+                    minutos = '0' + minutos;
+                }
+                if (segundos < 10) {
+                    segundos = '0' + segundos;
+                }
+                document.getElementById("crono").innerHTML = minutos + ":" + segundos
+            }
+        }
+
+        function empezar() {
+            let funcion = setInterval(crono, 100)
+        }
+    </script>
+</head>
+
+<body>
+    <p id="crono">00:00</p>
+    <button onclick="empezar()">Empezar</button>
+    <button onclick="parar()">Pausar</button>
+    <button onclick="continuar()">continuar</button>
+
+</body>
+
+
+</html>
