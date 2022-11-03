@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eje1</title>
+    <script>
+        document.cookie="usuario=Dinas"
+
+        let usuarioCookie="Dinas"
+        document.cookie="usuario="+encodeURIComponent(usuarioCookie)
+
+        document.cookie="usuario=Dinas;expires=Sat, 6 Aug 2023 12:15:00 GMT"
+
+
+
+
+    </script>
+</head>
+<body>
+    <button onclick="document.cookie='usuario=Dinas;expires=-Sat, 6 Aug 2023 12:15:00 GMT'">cookies</button>
+    <button onclick="alert(document.cookie)">ver cookis </button>
+</body>
+</html>
