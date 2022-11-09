@@ -11,16 +11,17 @@
 <body>
     <script>
         function fibonacci(num) {
-            if (num < 2) {
-                return num;
+            if(num<2) {
+                return num
+            }else{
+                return fibonacci(num-2) + fibonacci(num-1)
             }
-            else {
-                return fibonacci(num - 1) + fibonacci(num - 2);
-            }
-            document.write(num);
         }
-
-        let num = fibonacci(num); 
+        let num=prompt("introduce un numero:")
+        let resultado=(fibonacci(num))
+        
+        document.write(resultado)
+        
 
     </script>
 </body>
