@@ -16,17 +16,30 @@
                 cantidades de dobles parejas, trios, escaleras de 
                 tres elementos, escaleras de 4 elementos o pocker 
                 (4 elementos iguales) que tenemos en un número con 
-                4 cifras. (De 10.000 numeros)</p>
+                4 cifras. (De 10.000 numeros)
+            </p>
             <ul>
-                <li>Doble pareja: </li>
-                <li>Trios: </li>
-                <li>Escalera simple (3): </li>
-                <li>Escalera Completa (4): </li>
+                <li>Doble pareja:<snap id="doblePareja"></snap> </li>
+                <li>Trios: <snap id="trio"></snap></li>
+                <li>Escalera simple (3):<snap id="escaleraSimple"></snap> </li>
+                <li>Escalera Completa (4): <snap id="escaleraCompleta"></snap></li>
                 <li>Poker (4 iguales): <snap id="poker"></snap> </li>
             </ul>
         </div>
+        
         <div class="ap B">
+            <h3>Apartado B</h3>
+            <p> Modifica el programa para que nos solicite un número 
+                de 4 cifras y nos diga qué figura representa de las 5 
+                vistas anteriormente.En este caso debe de disponer de 
+                un botón que al pulsarlo nos muestre durante 10 segundos 
+                una subventana con todas las figuras anteriores y sus 
+                porcentajes de aparición
+            </p>
 
+            <input type="number" id="matricula">
+            <button onclick="calcularB()">Pulse aqui</button>
+            
         </div>
     </div>
 </body>
