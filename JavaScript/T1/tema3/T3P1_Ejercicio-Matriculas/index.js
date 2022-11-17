@@ -88,7 +88,10 @@ function calcularA() {
     document.getElementById("trio").innerHTML = tr
     document.getElementById("doblePareja").innerHTML = dp
 
+    
+
     calcularPorcetajes(PORpoker, poker, PORec, ec, PORes, es, PORtr, tr, PORdp, dp)
+    //window.open("popup.html" , "ventana1" , "width=400,height=400,scrollbars=NO")
 
 }
 
@@ -149,6 +152,8 @@ function calcularB(num) {
 
 
     document.getElementById("resultadoB").innerHTML = figura
+    window.open("popup.html" , "ventana1" , "width=400,height=400,scrollbars=NO")
+    
 }
 
 function pedirNum() {
@@ -184,12 +189,12 @@ function calcularPorcetajes/*y mostrar resultados*/(PORpoker, poker, PORec, ec, 
     PORtr = tr * 100 / 10000
     PORdp = dp * 100 / 10000
 
-    document.getElementById("PORpoker").innerHTML = PORpoker
+    /*document.getElementById("PORpoker").innerHTML = PORpoker
     document.getElementById("PORescaleraCompleta").innerHTML = PORec
     document.getElementById("PORescaleraSimple").innerHTML = PORes
     document.getElementById("PORtrio").innerHTML = PORtr
     document.getElementById("PORdoblePareja").innerHTML = PORdp
-
+*/
 
 
 }
