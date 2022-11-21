@@ -1,22 +1,23 @@
+let nums = [0, 0, 0, 0]
+let numsHelp //array auxiliar
+
+
+let poker = 0 //poker
+let ec = 0 //escalera completa
+let es = 0 //escalera simple
+let tr = 0 //trio
+let dp = 0 //doble pareja
+
+//-----------------porcentajes % 
+let PORpoker = 0 //poker 
+let PORec = 0 //escalera completa 
+let PORes = 0 //escalera simple 
+let PORtr = 0 //trio 
+let PORdp = 0 //doble pareja 
+//-----------------porcentajes %
+
 function calcularA() {
     console.log("ejecutando a")
-    let nums = [0, 0, 0, 0]
-    let numsHelp //array auxiliar
-
-
-    let poker = 0 //poker
-    let ec = 0 //escalera completa
-    let es = 0 //escalera simple
-    let tr = 0 //trio
-    let dp = 0 //doble pareja
-
-    //-----------------porcentajes % 
-    let PORpoker = 0 //poker 
-    let PORec = 0 //escalera completa 
-    let PORes = 0 //escalera simple 
-    let PORtr = 0 //trio 
-    let PORdp = 0 //doble pareja 
-    //-----------------porcentajes %
 
     let encontrado = false
 
@@ -78,21 +79,18 @@ function calcularA() {
         }
 
 
-        encontrado=false
+        encontrado=false//resetear el encontrado
         nums = incrementar(nums)//incrementar *NO TOCAR*
     }
 
+    //mostrar la cantidad de fuguras que aparecen en el main.html
     document.getElementById("poker").innerHTML = poker
     document.getElementById("escaleraCompleta").innerHTML = ec
     document.getElementById("escaleraSimple").innerHTML = es
     document.getElementById("trio").innerHTML = tr
     document.getElementById("doblePareja").innerHTML = dp
 
-    
-
-    calcularPorcetajes(PORpoker, poker, PORec, ec, PORes, es, PORtr, tr, PORdp, dp)
-    //window.open("popup.html" , "ventana1" , "width=400,height=400,scrollbars=NO")
-
+    calcularPorcetajes(poker,ec,es,tr,dp)
 }
 
 
@@ -150,11 +148,31 @@ function calcularB(num) {
 
     }
 
-
+    //mostrar la figura del numer odel usuario
     document.getElementById("resultadoB").innerHTML = figura
-    window.open("popup.html" , "ventana1" , "width=400,height=400,scrollbars=NO")
     
 }
+
+function calcularPorcetajes/*y mostrar resultados*/(poker,ec,es,tr,dp) {
+
+    PORpoker = poker * 100 / 10000
+    PORec = ec * 100 / 10000
+    PORes = es * 100 / 10000
+    PORtr = tr * 100 / 10000
+    PORdp = dp * 100 / 10000
+
+    
+    let ventana=window.open("popup.html","ventana" ,"width=300,height=300,scrollbars=NO" )
+
+    document.getElementById("PORpoker").innerHTML = PORpoker+"%"
+    ventana.document.getElementById("PORescaleraCompleta").innerHTML = PORec+"%"
+    document.getElementById("PORescaleraSimple").innerHTML = PORes+"%"
+    document.getElementById("PORtrio").innerHTML = PORtr+"%"
+    document.getElementById("PORdoblePareja").innerHTML = PORdp+"%"
+
+
+}
+
 
 function pedirNum() {
     //numero de usuario
@@ -181,23 +199,6 @@ function pasarArrInt(num) {//combertir array de carcteres a numeros enteros
     return num
 }
 
-function calcularPorcetajes/*y mostrar resultados*/(PORpoker, poker, PORec, ec, PORes, es, PORtr, tr, PORdp, dp) {
-
-    PORpoker = poker * 100 / 10000
-    PORec = ec * 100 / 10000
-    PORes = es * 100 / 10000
-    PORtr = tr * 100 / 10000
-    PORdp = dp * 100 / 10000
-
-    /*document.getElementById("PORpoker").innerHTML = PORpoker
-    document.getElementById("PORescaleraCompleta").innerHTML = PORec
-    document.getElementById("PORescaleraSimple").innerHTML = PORes
-    document.getElementById("PORtrio").innerHTML = PORtr
-    document.getElementById("PORdoblePareja").innerHTML = PORdp
-*/
-
-
-}
 
 function mostrarArray(arr) {
     let arrayStr = arr.toString()
@@ -206,6 +207,7 @@ function mostrarArray(arr) {
 }
 
 function incrementar(n) {
+    //incrementa el array del apratado A del 0000 al 9999
     n[3]++
     if (n[3] == 10) {
         n[3] = 0
