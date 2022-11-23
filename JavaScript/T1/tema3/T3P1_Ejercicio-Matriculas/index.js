@@ -191,9 +191,7 @@ function popup(PORpoker, PORec, PORes, PORtr, PORdp) {
 
     console.log("creacion y cerracion de la ventana")
 
-    setTimeout(function () {
-        cerrar(ventana);
-    }, 10000);
+    setTimeout(function () {cerrar(ventana);}, 10000);
 
 
 }

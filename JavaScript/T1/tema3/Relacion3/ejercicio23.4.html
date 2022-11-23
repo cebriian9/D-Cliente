@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eje23.4</title>
+    <script>
+        let frase=prompt("ingrese una palabra palindroma:")
+
+        let respuesta="es palindroma"
+        
+        let fraseInvertida=frase.split('').reverse().join('')
+
+        console.log(frase)
+        console.log(fraseInvertida)
+
+        if (frase!=fraseInvertida) {
+            respuesta="no es palindroma"
+        }
+        alert(respuesta)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
