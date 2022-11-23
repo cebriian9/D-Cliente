@@ -90,13 +90,13 @@ function calcularA() {
     document.getElementById("trio").innerHTML = tr
     document.getElementById("doblePareja").innerHTML = dp
 
-    calcularPorcetajes(poker,ec,es,tr,dp)
+    
 }
 
 
 function calcularB(num) {
 
-    let figura = ""
+    let figura = "ninguna"
     let encontrado = false
 
     //ordenado el array
@@ -150,6 +150,8 @@ function calcularB(num) {
 
     //mostrar la figura del numer odel usuario
     document.getElementById("resultadoB").innerHTML = figura
+    //calculo de porcentajes y muestra de resultados
+    calcularPorcetajes(poker,ec,es,tr,dp)
     
 }
 
@@ -161,18 +163,49 @@ function calcularPorcetajes/*y mostrar resultados*/(poker,ec,es,tr,dp) {
     PORtr = tr * 100 / 10000
     PORdp = dp * 100 / 10000
 
-    
-    let ventana=window.open("popup.html","ventana" ,"width=300,height=300,scrollbars=NO" )
-
-    document.getElementById("PORpoker").innerHTML = PORpoker+"%"
-    ventana.document.getElementById("PORescaleraCompleta").innerHTML = PORec+"%"
-    document.getElementById("PORescaleraSimple").innerHTML = PORes+"%"
-    document.getElementById("PORtrio").innerHTML = PORtr+"%"
-    document.getElementById("PORdoblePareja").innerHTML = PORdp+"%"
-
+    //creacion de ventana emergente    
+    popup(PORpoker, PORec, PORes, PORtr, PORdp )
 
 }
 
+function popup(PORpoker, PORec, PORes, PORtr, PORdp ) {
+    let ventana=window.open("","ventana" ,"width=400,height=300,scrollbars=NO" )
+
+    //link al css para dar estilo
+    ventana.document.write("<link rel='stylesheet' href='estilos.css'>")
+
+    //---------apertura-de-etiquetas-------
+    ventana.document.write("<div class='padre'>")
+    ventana.document.write("<div class='ap'>")
+    ventana.document.write("<h3>Porcentajes de aparicion:</h3>")
+    ventana.document.write("<ul>")
+
+    //--------muestra-de-los-porcentajes------
+    ventana.document.write("<li>Doble pareja: "+PORdp+" %</li>")
+    ventana.document.write("<li>Trio: "+PORtr+" %</li>")
+    ventana.document.write("<li>Escalera simple (3): "+PORes+" %</li>")
+    ventana.document.write("<li>Escalera completa (4): "+PORec+" %</li>")
+    ventana.document.write("<li>Poker (4 iguales): "+PORpoker+" %</li>")
+
+    //---------cierre-de-etiquetas-------
+    ventana.document.write("</ul>")
+    ventana.document.write("</div>")
+    ventana.document.write("</div>")
+
+    console.log("creacion y cerracion de la ventana")
+    
+    setTimeout(function(){
+        cerrar(ventana);
+    },10000);
+    
+    
+}
+
+function cerrar(ventana) {
+    console.log("cerracion de la ventana")
+
+    ventana.window.close()
+}
 
 function pedirNum() {
     //numero de usuario
