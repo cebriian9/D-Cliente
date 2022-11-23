@@ -21,8 +21,6 @@ function calcularA() {
 
     let encontrado = false
 
-
-
     for (let i = 0; i < 10000; i++) {
         //mostrar array orignal
         //mostrarArray(nums)
@@ -65,21 +63,21 @@ function calcularA() {
         //trios
         if (encontrado == false && (numsHelp[0]) == numsHelp[1] && (numsHelp[1]) == numsHelp[2]) {
             tr++
-            encontrado=true
+            encontrado = true
 
         } else if (encontrado == false && (numsHelp[1]) == numsHelp[2] && (numsHelp[2]) == numsHelp[3]) {
             tr++;
-            encontrado=true
+            encontrado = true
         }
 
         //doble pareja
         if (encontrado == false && numsHelp[0] == numsHelp[1] && numsHelp[2] == numsHelp[3]) {
             dp++;
-            encontrado=true
+            encontrado = true
         }
 
 
-        encontrado=false//resetear el encontrado
+        encontrado = false//resetear el encontrado
         nums = incrementar(nums)//incrementar *NO TOCAR*
     }
 
@@ -90,7 +88,6 @@ function calcularA() {
     document.getElementById("trio").innerHTML = tr
     document.getElementById("doblePareja").innerHTML = dp
 
-    
 }
 
 
@@ -151,11 +148,11 @@ function calcularB(num) {
     //mostrar la figura del numer odel usuario
     document.getElementById("resultadoB").innerHTML = figura
     //calculo de porcentajes y muestra de resultados
-    calcularPorcetajes(poker,ec,es,tr,dp)
-    
+    calcularPorcetajes(poker, ec, es, tr, dp)
+
 }
 
-function calcularPorcetajes/*y mostrar resultados*/(poker,ec,es,tr,dp) {
+function calcularPorcetajes/*y mostrar resultados*/(poker, ec, es, tr, dp) {
 
     PORpoker = poker * 100 / 10000
     PORec = ec * 100 / 10000
@@ -164,12 +161,12 @@ function calcularPorcetajes/*y mostrar resultados*/(poker,ec,es,tr,dp) {
     PORdp = dp * 100 / 10000
 
     //creacion de ventana emergente    
-    popup(PORpoker, PORec, PORes, PORtr, PORdp )
+    popup(PORpoker, PORec, PORes, PORtr, PORdp)
 
 }
 
-function popup(PORpoker, PORec, PORes, PORtr, PORdp ) {
-    let ventana=window.open("","ventana" ,"width=400,height=300,scrollbars=NO" )
+function popup(PORpoker, PORec, PORes, PORtr, PORdp) {
+    let ventana = window.open("", "ventana", "width=400,height=300,scrollbars=NO")
 
     //link al css para dar estilo
     ventana.document.write("<link rel='stylesheet' href='estilos.css'>")
@@ -181,11 +178,11 @@ function popup(PORpoker, PORec, PORes, PORtr, PORdp ) {
     ventana.document.write("<ul>")
 
     //--------muestra-de-los-porcentajes------
-    ventana.document.write("<li>Doble pareja: "+PORdp+" %</li>")
-    ventana.document.write("<li>Trio: "+PORtr+" %</li>")
-    ventana.document.write("<li>Escalera simple (3): "+PORes+" %</li>")
-    ventana.document.write("<li>Escalera completa (4): "+PORec+" %</li>")
-    ventana.document.write("<li>Poker (4 iguales): "+PORpoker+" %</li>")
+    ventana.document.write("<li>Doble pareja: " + PORdp + " %</li>")
+    ventana.document.write("<li>Trio: " + PORtr + " %</li>")
+    ventana.document.write("<li>Escalera simple (3): " + PORes + " %</li>")
+    ventana.document.write("<li>Escalera completa (4): " + PORec + " %</li>")
+    ventana.document.write("<li>Poker (4 iguales): " + PORpoker + " %</li>")
 
     //---------cierre-de-etiquetas-------
     ventana.document.write("</ul>")
@@ -193,12 +190,12 @@ function popup(PORpoker, PORec, PORes, PORtr, PORdp ) {
     ventana.document.write("</div>")
 
     console.log("creacion y cerracion de la ventana")
-    
-    setTimeout(function(){
+
+    setTimeout(function () {
         cerrar(ventana);
-    },10000);
-    
-    
+    }, 10000);
+
+
 }
 
 function cerrar(ventana) {
@@ -225,13 +222,12 @@ function pedirNum() {
     }
 }
 
-function pasarArrInt(num) {//combertir array de carcteres a numeros enteros
+function pasarArrInt(num) {//convertir array de carcteres a numeros enteros
     for (let index = 0; index < num.length; index++) {
         num[index] = parseInt(num[index])
     }
     return num
 }
-
 
 function mostrarArray(arr) {
     let arrayStr = arr.toString()
