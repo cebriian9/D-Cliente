@@ -53,10 +53,14 @@ function calcularA() {
         if (encontrado == false && (numsHelp[0] + 1) == numsHelp[1] && (numsHelp[1] + 1) == numsHelp[2]) {
             es++
             encontrado = true
+            console.log(numsHelp)
+            console.log(i+" delante")
 
         } else if (encontrado == false && (numsHelp[1] + 1) == numsHelp[2] && (numsHelp[2] + 1) == numsHelp[3]) {
             es++;
             encontrado = true
+            console.log(numsHelp)
+            console.log(i+" atras")
 
         }
 
