@@ -39,6 +39,7 @@ function calcularA() {
             && nums[2] == nums[3] && nums[3] == nums[0]) {
 
             poker++
+
             encontrado = true
         }
 
@@ -53,15 +54,10 @@ function calcularA() {
         if (encontrado == false && (numsHelp[0] + 1) == numsHelp[1] && (numsHelp[1] + 1) == numsHelp[2]) {
             es++
             encontrado = true
-            console.log(numsHelp)
-            console.log(i+" delante")
 
         } else if (encontrado == false && (numsHelp[1] + 1) == numsHelp[2] && (numsHelp[2] + 1) == numsHelp[3]) {
             es++;
             encontrado = true
-            console.log(numsHelp)
-            console.log(i+" atras")
-
         }
 
         //trios
@@ -103,6 +99,7 @@ function calcularB(num) {
     //ordenado el array
     numHelp = Array.from(num)
     numHelp = numHelp.sort()
+
 
     //comporbar si es un poker
     if (encontrado == false && num[0] == num[1] && num[1] == num[2]
@@ -211,7 +208,11 @@ function pedirNum() {
     let nUsuario = document.getElementById("matricula").value
 
     // comproar si es un numero de 4 digitos
-    if (nUsuario >= 0 && nUsuario != /[A-Z]/ && nUsuario.length == 4) {
+    if (nUsuario >= 0 && nUsuario != /[A-Z]/ && nUsuario.length <= 4) {
+        
+        while (nUsuario.length<4) {
+            nUsuario+="0"
+        }
 
         //paso el *string* del numero a int y a un array
         let num = Array.from(nUsuario)
