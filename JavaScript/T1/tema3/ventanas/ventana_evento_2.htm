@@ -1,0 +1,66 @@
+<html>
+
+<head>
+   <title>
+      P&aacute;gina con Javascript.
+   </title>
+   <script language="javascript">
+   
+      let ventana
+
+      function abrirVentana() {
+         let margenLeft = document.getElementById("left").value
+         let margenTop = document.getElementById("top").value
+         let color = document.getElementById("color").value
+         let tiempo= document.getElementById("tiempo").value*1000
+         let alto = document.getElementById("alto").value
+         let ancho = document.getElementById("ancho").value
+
+
+         let parametros = "width="+alto+", height="+ancho+", left=" + margenLeft + ", top=" + margenTop + " resizable=no, menubar=no, toolbar=no, directories=no, location=no, scrollbars=no, status=no";
+
+         ventana = window.open("texto_de_secundaria_2.htm", "ventana", parametros)
+         ventana.document.body.style.background = color
+
+         setTimeout(function () { cerrarVentana(); }, tiempo);
+
+      }
+
+      //cerrar ventana secundaria
+      function cerrarVentana() {
+         ventana.close()
+      }
+
+   </script>
+</head>
+
+<body>
+   <p>Margen a la izquierda:</p>
+   <input type="number" id="left">
+
+   <p>Margen a la top:</p>
+   <input type="number" id="top">
+   <br>
+
+   <p>alto:</p>
+   <input type="number" id="alto">
+
+   <p>ancho:</p>
+   <input type="number" id="ancho">
+   <br>
+
+   <p>Selecciona el color de fondo de la ventana</p>
+   <input type="color" id="color">
+   <br><br>
+
+   <p>Tiempo abierta (en segundos):</p>
+   <input type="number" id="tiempo">
+   <br><br>
+
+   <button onfocus="abrirVentana()">Pulse.</button>
+
+   <button onblur="cerrarVentana()">Cerrar ventana secundaria</button>
+
+</body>
+
+</html>
