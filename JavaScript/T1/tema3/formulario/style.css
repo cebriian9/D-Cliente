@@ -1,0 +1,71 @@
+.color1 {color: #121020;}
+.color2 {color: #27385f;}
+.color3 {color: #6364ad;}
+.color4 {color: #b89bf9;}
+.color5 {color: #ffdef4;}
+/*colores*/
+
+body{
+    background-color: #121020;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.formulario{
+    background-color: #6364ad;
+    box-shadow: 3px 3px #3a3a64;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    max-width: 500px;
+    justify-content: center;
+    gap: 10px;
+    border: 5px solid #27385f;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.formulario p{
+    padding-left: 20%;
+}
+
+.titulo{
+    margin-bottom: 5px;
+}
+
+input{
+    max-width: 150px;
+    border: 0;
+    background-color: rgb(230, 230, 230);
+    padding: 10px;
+}
+
+
+
+
+@media (max-width:700px) {
+
+    .titulo{
+        margin-bottom: 5px;
+        margin: 0 auto;
+        padding: 50px 50px;
+    }
+
+    .formulario{
+        
+        grid-template-columns: 1fr ;
+        margin: 0 auto;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    
+}
