@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eje35</title>
+    <script>
+        function mail() {
+            let ventana = window.open("", "ventana mail", "scrollbars=NO")
+            let num;
+            num = Math.random() * 3;
+
+            num = parseInt(num)
+            if (num == 0)
+                ventana.location = 'http://www.hotmail.com'
+            if (num == 1)
+                ventana.location = 'http://www.gmail.com'
+            if (num == 2)
+                ventana.location = 'http://www.yahoo.com'
+
+        }
+    </script>
+</head>
+
+<body>
+    <a href="#" onclick="mail()">Mail aleatorio</a>
+</body>
+
+</html>

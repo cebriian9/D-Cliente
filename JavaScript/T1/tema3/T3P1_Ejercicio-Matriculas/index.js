@@ -21,8 +21,6 @@ function calcularA() {
 
     let encontrado = false
 
-
-
     for (let i = 0; i < 10000; i++) {
         //mostrar array orignal
         //mostrarArray(nums)
@@ -41,6 +39,7 @@ function calcularA() {
             && nums[2] == nums[3] && nums[3] == nums[0]) {
 
             poker++
+
             encontrado = true
         }
 
@@ -59,27 +58,26 @@ function calcularA() {
         } else if (encontrado == false && (numsHelp[1] + 1) == numsHelp[2] && (numsHelp[2] + 1) == numsHelp[3]) {
             es++;
             encontrado = true
-
         }
 
         //trios
         if (encontrado == false && (numsHelp[0]) == numsHelp[1] && (numsHelp[1]) == numsHelp[2]) {
             tr++
-            encontrado=true
+            encontrado = true
 
         } else if (encontrado == false && (numsHelp[1]) == numsHelp[2] && (numsHelp[2]) == numsHelp[3]) {
             tr++;
-            encontrado=true
+            encontrado = true
         }
 
         //doble pareja
         if (encontrado == false && numsHelp[0] == numsHelp[1] && numsHelp[2] == numsHelp[3]) {
             dp++;
-            encontrado=true
+            encontrado = true
         }
 
 
-        encontrado=false//resetear el encontrado
+        encontrado = false//resetear el encontrado
         nums = incrementar(nums)//incrementar *NO TOCAR*
     }
 
@@ -90,18 +88,18 @@ function calcularA() {
     document.getElementById("trio").innerHTML = tr
     document.getElementById("doblePareja").innerHTML = dp
 
-    calcularPorcetajes(poker,ec,es,tr,dp)
 }
 
 
 function calcularB(num) {
 
-    let figura = ""
+    let figura = "ninguna"
     let encontrado = false
 
     //ordenado el array
     numHelp = Array.from(num)
     numHelp = numHelp.sort()
+
 
     //comporbar si es un poker
     if (encontrado == false && num[0] == num[1] && num[1] == num[2]
@@ -150,10 +148,12 @@ function calcularB(num) {
 
     //mostrar la figura del numer odel usuario
     document.getElementById("resultadoB").innerHTML = figura
-    
+    //calculo de porcentajes y muestra de resultados
+    calcularPorcetajes(poker, ec, es, tr, dp)
+
 }
 
-function calcularPorcetajes/*y mostrar resultados*/(poker,ec,es,tr,dp) {
+function calcularPorcetajes/*y mostrar resultados*/(poker, ec, es, tr, dp) {
 
     PORpoker = poker * 100 / 10000
     PORec = ec * 100 / 10000
@@ -161,25 +161,58 @@ function calcularPorcetajes/*y mostrar resultados*/(poker,ec,es,tr,dp) {
     PORtr = tr * 100 / 10000
     PORdp = dp * 100 / 10000
 
-    
-    let ventana=window.open("popup.html","ventana" ,"width=300,height=300,scrollbars=NO" )
+    //creacion de ventana emergente    
+    popup(PORpoker, PORec, PORes, PORtr, PORdp)
 
-    document.getElementById("PORpoker").innerHTML = PORpoker+"%"
-    ventana.document.getElementById("PORescaleraCompleta").innerHTML = PORec+"%"
-    document.getElementById("PORescaleraSimple").innerHTML = PORes+"%"
-    document.getElementById("PORtrio").innerHTML = PORtr+"%"
-    document.getElementById("PORdoblePareja").innerHTML = PORdp+"%"
+}
+
+function popup(PORpoker, PORec, PORes, PORtr, PORdp) {
+    let ventana = window.open("", "ventana", "width=400,height=300,scrollbars=NO")
+
+    //link al css para dar estilo
+    ventana.document.write("<link rel='stylesheet' href='estilos.css'>")
+
+    //---------apertura-de-etiquetas-------
+    ventana.document.write("<div class='padre'>")
+    ventana.document.write("<div class='ap'>")
+    ventana.document.write("<h3>Porcentajes de aparicion:</h3>")
+    ventana.document.write("<ul>")
+
+    //--------muestra-de-los-porcentajes------
+    ventana.document.write("<li>Doble pareja: " + PORdp + " %</li>")
+    ventana.document.write("<li>Trio: " + PORtr + " %</li>")
+    ventana.document.write("<li>Escalera simple (3): " + PORes + " %</li>")
+    ventana.document.write("<li>Escalera completa (4): " + PORec + " %</li>")
+    ventana.document.write("<li>Poker (4 iguales): " + PORpoker + " %</li>")
+
+    //---------cierre-de-etiquetas-------
+    ventana.document.write("</ul>")
+    ventana.document.write("</div>")
+    ventana.document.write("</div>")
+
+    console.log("creacion y cerracion de la ventana")
+
+    setTimeout(function () {cerrar(ventana);}, 10000);
 
 
 }
 
+function cerrar(ventana) {
+    console.log("cerracion de la ventana")
+
+    ventana.window.close()
+}
 
 function pedirNum() {
     //numero de usuario
     let nUsuario = document.getElementById("matricula").value
 
     // comproar si es un numero de 4 digitos
-    if (nUsuario >= 0 && nUsuario != /[A-Z]/ && nUsuario.length == 4) {
+    if (nUsuario >= 0 && nUsuario != /[A-Z]/ && nUsuario.length <= 4) {
+        
+        while (nUsuario.length<4) {
+            nUsuario+="0"
+        }
 
         //paso el *string* del numero a int y a un array
         let num = Array.from(nUsuario)
@@ -192,13 +225,12 @@ function pedirNum() {
     }
 }
 
-function pasarArrInt(num) {//combertir array de carcteres a numeros enteros
+function pasarArrInt(num) {//convertir array de carcteres a numeros enteros
     for (let index = 0; index < num.length; index++) {
         num[index] = parseInt(num[index])
     }
     return num
 }
-
 
 function mostrarArray(arr) {
     let arrayStr = arr.toString()
