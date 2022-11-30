@@ -1,71 +1,120 @@
-.color1 {color: #121020;}
-.color2 {color: #27385f;}
-.color3 {color: #6364ad;}
-.color4 {color: #b89bf9;}
-.color5 {color: #ffdef4;}
+.color1 {
+    color: #121020;
+}
+
+.color2 {
+    color: #27385f;
+}
+
+.color3 {
+    color: #6364ad;
+}
+
+.color4 {
+    color: #b89bf9;
+}
+
+.color5 {
+    color: #ffdef4;
+}
+
 /*colores*/
 
-body{
+body {
     background-color: #121020;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.contenedor{
+.contenedor {
     display: flex;
     flex-direction: column;
-    justify-content: baseline;
+    justify-content: space-between;
     max-width: 500px;
     margin: 0 auto;
+
+    border: 1px solid red;
 }
 
-.formulario{
+.formulario {
     background-color: #6364ad;
     box-shadow: 3px 3px #3a3a64;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    max-width: 500px;
+    max-width: auto;
     justify-content: center;
     gap: 10px;
     border: 5px solid #27385f;
     align-items: center;
-    padding: 10px;
+    padding: 50px;
     border-radius: 5px;
+
 }
 
-.formulario p{
+.formulario>p {
     padding-left: 20%;
 }
 
-.titulo{
+.titulo {
     margin-bottom: 5px;
 }
 
-input{
+input,
+select {
     max-width: 150px;
     border: 0;
     background-color: rgb(230, 230, 230);
     padding: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 3px #3a3a64;
 }
+
+.enviar,
+.reset {
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+
+
+/*-----------datos-------------------*/
+.datos {
+    background-color: #6364ad;
+    box-shadow: 3px 3px #3a3a64;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr ;
+    border: 5px solid #27385f;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.intentos{
+    border-bottom: 2px solid #3a3a64;
+}
+
+
 
 
 
 
 @media (max-width:700px) {
 
-    .titulo{
+    .titulo {
         margin-bottom: 5px;
         margin: 0 auto;
         padding: 50px 50px;
     }
 
-    .formulario{
-        
-        grid-template-columns: 1fr ;
+    .formulario {
+
+        grid-template-columns: 1fr;
         margin: 0 auto;
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-top: 20px;
     }
-    
+
+
+
 }

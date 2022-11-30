@@ -13,18 +13,40 @@
 <body>
     <div class="contenedor">
         <h2 class="titulo">Formulario</h2>
-        <form action="" class="formulario">
+        <form action="_blank" class="formulario">
             <p>Nombre:</p>
-            <input type="text" id="nombre" placeholder="Nombre">
+            <input type="text" id="nombre" placeholder="Nombre" >
             <p>Apellido:</p>
-            <input type="text" id="apellido" placeholder="Apellido">
+            <input type="text" id="apellido" placeholder="Apellido" >
+            <p>Edad:</p>
+            <input type="number" id="edad" placeholder="Edad" >
             <p>DNI:</p>
-            <input type="text" id="dni" placeholder="DNI">
+            <input type="text" id="dni" placeholder="DNI" >
             <p>Correo:</p>
-            <input type="email" id="email" placeholder="Correo electronico">
+            <input type="email" id="email" placeholder="Correo electronico" >
+            <p>Provincia:</p>
+            <select name="provincias" id="provincia">
+                <option value="almeria">Almeria</option>
+                <option value="granada">Granada</option>
+                <option value="malaga">Malaga</option>
+                <option value="sevilla">Sevilla</option>
+                <option value="huelva">Hulva</option>
+                <option value="jaen">Jaen</option>
+                <option value="cadiz">Cadiz</option>
+            </select>
+            <p>Fecha Nacimiento:</p>
+            <input type="date" id="FechaNac">
             <p>Numero de telefono:</p>
-            <input type="number" id="telefono" placeholder="Numero de telefono">
+            <input type="tel" id="telefono" placeholder="Numero de telefono" >
+            <p>Hora de visita:</p>
+            <input type="time" id="FechaNac">
+
+            <input type="submit" value="Enviar" class="enviar">
+            <input type="reset" value="Restablecer" class="reset">
         </form>
+        <div class="datos">
+            <p>Numero de intentos: <span id="nIntentos" class="intentos"></span></p>
+        </div>
     </div>
 
 </body>
