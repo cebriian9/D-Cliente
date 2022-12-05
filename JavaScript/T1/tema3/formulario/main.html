@@ -15,22 +15,22 @@
         <h2 class="titulo">Formulario</h2>
         <form action="_blank" class="formulario">
             <p>Nombre:</p>
-            <input type="text" id="nombre" placeholder="Nombre" >
+            <input type="text" id="nombre" placeholder="Nombre" onblur="mayusculas('nombre')">
             <p>Apellido:</p>
-            <input type="text" id="apellido" placeholder="Apellido" >
+            <input type="text" id="apellido" placeholder="Apellido" onblur="mayusculas('apellido')">
             <p>Edad:</p>
-            <input type="number" id="edad" placeholder="Edad" >
+            <input type="text" id="edad" placeholder="Edad" onblur="getEdad('edad')">
             <p>DNI:</p>
-            <input type="text" id="dni" placeholder="DNI" >
+            <input type="text" id="dni" placeholder="DNI (12345678-p)" onblur="getDNI('dni')">
             <p>Correo:</p>
-            <input type="email" id="email" placeholder="Correo electronico" >
+            <input type="email" id="email" placeholder="Correo electronico" onblur="getEmail('email')">
             <p>Provincia:</p>
             <select name="provincias" id="provincia">
                 <option value="almeria">Almeria</option>
                 <option value="granada">Granada</option>
                 <option value="malaga">Malaga</option>
                 <option value="sevilla">Sevilla</option>
-                <option value="huelva">Hulva</option>
+                <option value="huelva">Huelva</option>
                 <option value="jaen">Jaen</option>
                 <option value="cadiz">Cadiz</option>
             </select>
@@ -44,8 +44,20 @@
             <input type="submit" value="Enviar" class="enviar">
             <input type="reset" value="Restablecer" class="reset">
         </form>
+
+
         <div class="datos">
-            <p>Numero de intentos: <span id="nIntentos" class="intentos"></span></p>
+            <div>
+                <span>Numero de intentos: <span id="nIntentos" class="intentos"></span></span>
+            </div>
+            <div class="errores">
+                <span>Errores:</span>
+                <span id="error"></span>
+            </div>
+        </div>
+        <div class="errores">
+            
+
         </div>
     </div>
 

@@ -33,28 +33,29 @@ body {
     max-width: 500px;
     margin: 0 auto;
 
-    border: 1px solid red;
 }
 
 .formulario {
     background-color: #6364ad;
     box-shadow: 3px 3px #3a3a64;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    max-width: auto;
-    justify-content: center;
+    grid-template-rows: repeat(10 / 1fr);
+
+    text-align: center;
     gap: 10px;
     border: 5px solid #27385f;
-    align-items: center;
+    
     padding: 50px;
     border-radius: 5px;
 
+
+    align-items: center;/*no cambiar*/
+    
 }
 
-.formulario>p {
-    padding-left: 20%;
-}
+
 
 .titulo {
     margin-bottom: 5px;
@@ -68,6 +69,7 @@ select {
     padding: 10px;
     border-radius: 5px;
     box-shadow: 3px 3px #3a3a64;
+    text-align: center;
 }
 
 .enviar,
@@ -82,16 +84,34 @@ select {
 .datos {
     background-color: #6364ad;
     box-shadow: 3px 3px #3a3a64;
+
     margin-top: 30px;
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr ;
+    grid-template-rows: 100px;
+
+    gap: 10px;
     border: 5px solid #27385f;
     padding: 10px;
     border-radius: 5px;
 }
 
-.intentos{
+.datos>div {
+    background-color: #7273ad;
+    border-radius: 5px;
+    padding: 10px;
+    border: 5px solid #27385f;
+
+
+}
+
+.errores {
+    display: flex;
+    flex-direction: column;
+}
+
+.intentos {
     border-bottom: 2px solid #3a3a64;
 }
 
@@ -110,11 +130,22 @@ select {
 
     .formulario {
 
-        grid-template-columns: 1fr;
-        margin: 0 auto;
+        grid-template-columns: 1fr ;
+        margin-right: 10px;
+        margin-left: 10px;
+        padding: 20%;
         padding-top: 20px;
+        text-align: start;
+        align-self:center;
     }
+    
 
+   
 
+    .datos {
+        grid-template-columns: 1fr;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
 
 }
