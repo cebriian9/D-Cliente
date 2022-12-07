@@ -13,19 +13,21 @@
 <body>
     <div class="contenedor">
         <h2 class="titulo">Formulario</h2>
-        <form action="_blank" class="formulario">
+        <form action="" class="formulario">
             <p>Nombre:</p>
             <input type="text" id="nombre" placeholder="Nombre" onblur="mayusculas('nombre')">
             <p>Apellido:</p>
             <input type="text" id="apellido" placeholder="Apellido" onblur="mayusculas('apellido')">
             <p>Edad:</p>
-            <input type="text" id="edad" placeholder="Edad" onblur="getEdad('edad')">
+            <input type="number" id="edad" placeholder="Edad" onblur="getEdad('edad')">
             <p>DNI:</p>
             <input type="text" id="dni" placeholder="DNI (12345678-p)" onblur="getDNI('dni')">
             <p>Correo:</p>
             <input type="email" id="email" placeholder="Correo electronico" onblur="getEmail('email')">
+
             <p>Provincia:</p>
-            <select name="provincias" id="provincia">
+            <select name="provincia" id="provincia" onchange="getEmail('provincia')">
+                <option selected="true" disabled="disabled">Provincia</option>
                 <option value="almeria">Almeria</option>
                 <option value="granada">Granada</option>
                 <option value="malaga">Malaga</option>
@@ -34,21 +36,25 @@
                 <option value="jaen">Jaen</option>
                 <option value="cadiz">Cadiz</option>
             </select>
-            <p>Fecha Nacimiento:</p>
-            <input type="date" id="FechaNac">
-            <p>Numero de telefono:</p>
-            <input type="tel" id="telefono" placeholder="Numero de telefono" >
-            <p>Hora de visita:</p>
-            <input type="time" id="FechaNac">
 
-            <input type="submit" value="Enviar" class="enviar">
+            <p>Fecha Nacimiento:</p>
+            <input type="date" id="fechaNac" onchange="getFecha('fechaNac')">
+
+            <p>Numero de telefono:</p>
+            <input type="number" id="telefono" placeholder="Numero de telefono" onblur="getTel('telefono')">
+
+            <p>Hora de visita:</p>
+            <input type="time" id="horaVisita" onchange="getFecha('horaVisita')">
+
+            <input type="submit" value="Enviar" class="enviar" onclick="mostrarCookies()">
             <input type="reset" value="Restablecer" class="reset">
         </form>
 
 
         <div class="datos">
             <div>
-                <span>Numero de intentos: <span id="nIntentos" class="intentos"></span></span>
+                <span>Numero de intentos: </span>
+                <span id="nIntentos" class="intentos"></span>
             </div>
             <div class="errores">
                 <span>Errores:</span>

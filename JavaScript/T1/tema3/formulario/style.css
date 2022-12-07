@@ -72,6 +72,8 @@ select {
     text-align: center;
 }
 
+
+
 .enviar,
 .reset {
     margin: 0 auto;
@@ -88,7 +90,7 @@ select {
     margin-top: 30px;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr ;
     grid-template-rows: 100px;
 
     gap: 10px;
@@ -102,18 +104,15 @@ select {
     border-radius: 5px;
     padding: 10px;
     border: 5px solid #27385f;
-
-
-}
-
-.errores {
     display: flex;
     flex-direction: column;
+
+
 }
 
-.intentos {
-    border-bottom: 2px solid #3a3a64;
-}
+
+
+
 
 
 
@@ -139,8 +138,6 @@ select {
         align-self:center;
     }
     
-
-   
 
     .datos {
         grid-template-columns: 1fr;

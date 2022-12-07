@@ -1,4 +1,19 @@
 
+//---cookies---
+document.cookie=0
+
+function mostrarCookies() {
+    let intentos=2
+
+    document.getElementById("nIntentos").innerHTML=intentos
+}
+
+//---/cookies--
+
+
+//true=hay un error
+//false=no hay errores 
+
 //muestra los errores
 function mostrarError(lugar, contenido) {
     let valido = false
@@ -19,16 +34,22 @@ function mostrarError(lugar, contenido) {
             valido = validarDNI(contenido)
             console.log("dni: " + valido)
             break;
+
         case 'email':
-            valido = validarDNI(contenido) //hacer esta funcion y eso
-            console.log("dni: " + valido)
+            valido = validarEmail(contenido)
+            console.log("email: " + valido)
             break;
+
+        case 'telefono':
+            valido = validarTel(contenido)
+            console.log("telefono: " + valido)
+            break;
+
 
         default:
             break;
     }
 
-    console.log(valido)
 
 
     if (valido) {
@@ -45,9 +66,7 @@ function mostrarError(lugar, contenido) {
 
 //valida que el texto(nombre apellido) solo tengan letras
 function validarTexto(contenido) {
-
     valido = false
-
     let patron = /^[A-Z]+$/;
     if (!patron.test(contenido)) {
         valido = true
@@ -55,48 +74,60 @@ function validarTexto(contenido) {
     return valido
 }
 
-
-
 //valida que el rango de edad es correcto
 function validarEdad(edad) {
-
     let valido = false
     if (edad > 0 && edad < 105) {
         valido = true;
 
     }
-
     return valido
-
 }
 
 //expresion regilar par ael DNI
 function validarDNI(dni) {
     let valido = false
-
     //valida que hay 8 primeros numeros y al final un " - " y una letra
     let patronDNI = /^[0-9]{8}-[A-Z]+$/i
-
     if (!patronDNI.test(dni)) {
         valido = true
     }
-
     return valido
 }
+
+//expresion para validar que el email es correcto
+function validarEmail(email) {
+    let valido = false
+    let patronEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
+    if (!patronEmail.test(email)) {
+        valido = true
+    }
+    return valido
+}
+
+
+function validarTel(tel){
+    let valido=false
+    //primero compruevo que los primeros numeros sean 6,7,9 y despues que lo sigiente sean 8 numeros
+    let patronTel=/^[6,7,9][0-9]{8}$/
+    if (!patronTel.test(tel)) {
+        valido = true
+    }
+    return valido
+}
+
 //-----------/validar-datos-----------------------
 
 
 
 //--------------recoger-datos----------------
 
-//recoje nombre y apellido y lo pone en mayus
+//recoje nombre y apellido y lo pone en mayusculas
 function mayusculas(lugar) {
     let texto = document.getElementById(lugar).value
     texto = texto.toUpperCase()
     document.getElementById(lugar).value = texto
-
     mostrarError(lugar, texto)
-
 }
 
 function getEdad(lugar) {
@@ -109,7 +140,36 @@ function getDNI(lugar) {
     mostrarError(lugar, dni)
 }
 
+function getEmail(lugar) {
+    let email = document.getElementById(lugar).value
+    mostrarError(lugar, email)
+}
 
+function getProvincia(lugar) {
 
+    //busque esto en internet pero no me llega a funcionar
+    let idProvincia = document.getElementById(lugar).value
+    let selected = idProvincia.options[idProvincia.selectedIndex].text;
 
+    //console.log(provincia.text)
+    //mostrarError(lugar, provincia)
+}
 
+//no lo compruebo ya que con el tipo de input ya dejo que el usuario seleccione la fecha sin necesidad de comprobarla y no doy pie a errores
+function getFecha(lugar) {
+    let fecha = document.getElementById(lugar).value
+    console.log(fecha)
+
+}
+
+function getTel(lugar) {
+    let tel = document.getElementById(lugar).value
+    mostrarError(lugar, tel)
+}
+
+//no lo compruebo ya que con el tipo de input ya dejo que el usuario seleccione la hora sin necesidad de comprobarla y no doy pie a errores
+function getHora(lugar) {
+    let hora = document.getElementById(lugar).value
+    console.log(hora)
+
+}
