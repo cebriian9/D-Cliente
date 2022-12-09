@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>formulario-RaulRodriguez</title>
-    <script src="index.js"></script>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 
-<body>
+<body onload="crearCookie()">
     <div class="contenedor">
         <h2 class="titulo">Formulario</h2>
-        <form action="" class="formulario">
+        <form action="" class="formulario" name="formulario">
             <p>Nombre:</p>
             <input type="text" id="nombre" placeholder="Nombre" onblur="mayusculas('nombre')">
             <p>Apellido:</p>
@@ -46,8 +46,10 @@
             <p>Hora de visita:</p>
             <input type="time" id="horaVisita" onchange="getFecha('horaVisita')">
 
-            <input type="submit" value="Enviar" class="enviar" onclick="mostrarCookies()">
+            <input type="button" value="Enviar" class="enviar" onclick="pregunta()">
             <input type="reset" value="Restablecer" class="reset">
+
+            
         </form>
 
 
@@ -67,6 +69,8 @@
         </div>
     </div>
 
+
+    <script src="index.js"></script>
 </body>
 
 </html>

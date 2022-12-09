@@ -1,15 +1,26 @@
 
 //---cookies---
-document.cookie=0
 
-function mostrarCookies() {
-    let intentos=2
-
-    document.getElementById("nIntentos").innerHTML=intentos
+//creo la cookie y digo que es un numero
+function crearCookie() {
+    Number(document.cookie)
+    document.getElementById("nIntentos").innerHTML = document.cookie
 }
 
-//---/cookies--
+function mostrarCookies() {
 
+    //a cada intento la incremento y la muestro
+    document.cookie++
+    document.getElementById("nIntentos").innerHTML = document.cookie
+}
+
+//---/fin-cookies--
+
+function pregunta(){
+    if (confirm('¿Estas seguro de enviar este formulario?')){
+       document.formulario.submit()
+    }
+}
 
 //true=hay un error
 //false=no hay errores 
@@ -45,12 +56,9 @@ function mostrarError(lugar, contenido) {
             console.log("telefono: " + valido)
             break;
 
-
         default:
             break;
     }
-
-
 
     if (valido) {
         console.log("*ERROR*")
@@ -106,10 +114,10 @@ function validarEmail(email) {
 }
 
 
-function validarTel(tel){
-    let valido=false
+function validarTel(tel) {
+    let valido = false
     //primero compruevo que los primeros numeros sean 6,7,9 y despues que lo sigiente sean 8 numeros
-    let patronTel=/^[6,7,9][0-9]{8}$/
+    let patronTel = /^[6,7,9][0-9]{8}$/
     if (!patronTel.test(tel)) {
         valido = true
     }
@@ -173,3 +181,5 @@ function getHora(lugar) {
     console.log(hora)
 
 }
+
+
