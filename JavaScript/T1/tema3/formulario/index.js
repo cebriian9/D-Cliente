@@ -16,7 +16,7 @@ function crearCookie() {
       count++;
       
       // Actualizar el valor de la cookie con el nuevo valor del contador
-      document.cookie = "intentos=" + count;
+      document.cookie = "intentos=" + count+"; expires=Fri, 31 Dec 9999 23:59:59 GMT";
       document.getElementById("nIntentos").innerHTML = document.cookie.replace(/(?:(?:^|.*;\s*)intentos\s*\=\s*([^;]*).*$)|^.*$/, "$1")
     
 }
