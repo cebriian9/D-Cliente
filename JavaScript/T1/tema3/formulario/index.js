@@ -3,9 +3,22 @@
 
 //creo la cookie y digo que es un numero
 function crearCookie() {
-    let intentos=0
-    document.cookie='intentos='+intentos
-    document.getElementById("nIntentos").innerHTML = inte
+
+    if (document.cookie && document.cookie.match('intentos')) {
+        // Obtener el valor actual del contador de la cookie
+        var count = parseInt(document.cookie.match(/intentos=(\d+)/)[1]);
+      } else {
+        // Establecer el valor del contador en 0 si la cookie no existe
+        var count = 0;
+      }
+      
+      // Incrementar el contador
+      count++;
+      
+      // Actualizar el valor de la cookie con el nuevo valor del contador
+      document.cookie = "intentos=" + count;
+      document.getElementById("nIntentos").innerHTML = document.cookie.replace(/(?:(?:^|.*;\s*)intentos\s*\=\s*([^;]*).*$)|^.*$/, "$1")
+    
 }
 
 function mostrarCookies() {
@@ -16,10 +29,13 @@ function mostrarCookies() {
 
 //---/fin-cookies--
 
+
+//mensaje de confirmacion de envio
 function pregunta(){
     if (confirm('¿Estas seguro de enviar este formulario?')){
        document.formulario.submit()
     }
+    crearCookie()
 }
 
 //true=hay un error
