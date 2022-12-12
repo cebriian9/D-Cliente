@@ -6,25 +6,25 @@ function crearCookie() {
 
     if (document.cookie && document.cookie.match('intentos')) {
         // Obtener el valor actual del contador de la cookie
-        var count = parseInt(document.cookie.match(/intentos=(\d+)/)[1]);
+        var count = parseInt(document.cookie.match(/intentos=(\d+)/)[1])
       } else {
         // Establecer el valor del contador en 0 si la cookie no existe
-        var count = 0;
+        var count = 0
       }
       
       // Incrementar el contador
-      count++;
+      count++
       
       // Actualizar el valor de la cookie con el nuevo valor del contador
-      document.cookie = "intentos=" + count+"; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-      document.getElementById("nIntentos").innerHTML = document.cookie.replace(/(?:(?:^|.*;\s*)intentos\s*\=\s*([^;]*).*$)|^.*$/, "$1")
+      document.cookie = "intentos=" + count+"; expires=Fri, 31 Dec 9999 23:59:59 GMT"
+      document.getElementById("nIntentos").innerHTML = document.cookie.match(/intentos=(\d+)/)[1]
     
 }
 
 function mostrarCookies() {
 
     //a cada intento la incremento y la muestro
-    document.getElementById("nIntentos").innerHTML = document.cookie.replace(/(?:(?:^|.*;\s*)intentos\s*\=\s*([^;]*).*$)|^.*$/, "$1")
+    document.getElementById("nIntentos").innerHTML = document.cookie.match(/intentos=(\d+)/)[1]
 }
 
 //---/fin-cookies--
