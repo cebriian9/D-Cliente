@@ -3,15 +3,15 @@
 
 //creo la cookie y digo que es un numero
 function crearCookie() {
-    Number(document.cookie)
-    document.getElementById("nIntentos").innerHTML = document.cookie
+    let intentos=0
+    document.cookie='intentos='+intentos
+    document.getElementById("nIntentos").innerHTML = inte
 }
 
 function mostrarCookies() {
 
     //a cada intento la incremento y la muestro
-    document.cookie++
-    document.getElementById("nIntentos").innerHTML = document.cookie
+    document.getElementById("nIntentos").innerHTML = document.cookie.replace(/(?:(?:^|.*;\s*)intentos\s*\=\s*([^;]*).*$)|^.*$/, "$1")
 }
 
 //---/fin-cookies--
