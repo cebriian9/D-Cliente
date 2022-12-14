@@ -112,7 +112,7 @@ function validarEdad(edad) {
 function validarDNI(dni) {
     let valido = false
     //valida que hay 8 primeros numeros y al final un " - " y una letra
-    let patronDNI = /^[0-9]{8}-[A-Z]+$/i
+    let patronDNI = /^[0-9]{8}-[A-Z]{1}$/i
     if (!patronDNI.test(dni)) {
         valido = true
     }
