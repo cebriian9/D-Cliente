@@ -12,7 +12,7 @@ function crearCookie() {
         var count = 0
       }
       
-      // Incrementar el contador
+      // Incrementar el contadorr
       count++
       
       // Actualizar el valor de la cookie con el nuevo valor del contador
