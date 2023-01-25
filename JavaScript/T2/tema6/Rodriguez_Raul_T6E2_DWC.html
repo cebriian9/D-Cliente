@@ -22,7 +22,25 @@ grosor del borde de la tabla mediante un boton.
          //lo combierto en numero
          borde=Number(borde)
 
+         return borde
+      }
+
+      function mostrarBorde() {
+
+         let borde=calcularBorde()
+
          document.getElementById("resultado").innerHTML=borde+"px"
+      }
+
+      function disminuirBorde() {
+         
+         let borde=calcularBorde()
+
+         if (borde>=1) {
+            
+            document.getElementById("tabla1").style.border=(borde++)+"px solid black"
+
+         }
       }
 
       
@@ -71,6 +89,9 @@ grosor del borde de la tabla mediante un boton.
    <br>
    <button onclick="calcularBorde()">calcular borde</button>
    <p> Mide: <span id="resultado"></span></p>
+
+   <button onclick="aumentarBorde()">aumentar</button><br>
+   <button onclick="disminuirBorde()">disminuir</button>
 
 
 
