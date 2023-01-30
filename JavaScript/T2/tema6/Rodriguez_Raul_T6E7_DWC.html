@@ -1,0 +1,53 @@
+<html>
+
+<head>
+   <title>
+      P&aacute;gina con Javascript.
+   </title>
+   <script language="javascript">
+      function agregarFila() {
+         //agrego una row con .insertRow()
+         document.getElementById('tabla').insertRow().innerHTML = '<td></td><td></td><td></td><td></td>'
+
+      }
+
+      function eliminarFila() {
+
+         //saco la tabla como una variable
+         const table = document.getElementById('tabla')
+         //y el numero de filas
+         const rows = table.rows.length
+
+         //comprobamos que las filas minimo sean 1
+         if (rows <= 1) {
+            alert('No se puede eliminar el encabezado')
+         } else {
+            //sino elimino la ultima fila
+            table.deleteRow(-1)
+         }
+
+      }
+
+
+
+
+   </script>
+</head>
+
+<body>
+   <table border="1" id="tabla">
+      <tr>
+         <td>una</td>
+         <td>dos</td>
+         <td>tres</td>
+         <td>cuatro</td>
+      </tr>
+   </table>
+
+   <button onclick="agregarFila()">Agregar Fila</button>
+   <button onclick="eliminarFila()">Eliminar Fila</button>
+
+
+</body>
+
+</html>
