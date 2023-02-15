@@ -7,18 +7,23 @@ document.addEventListener("DOMContentLoaded", function () {
     //hago un nodo de todos los divs para luego recorrerlo
     const divs = document.querySelectorAll("#miDiv")
 
+    //nodo de la pizarra entera
+    const zonaDibujo = document.getElementById("pizarra")
+    
+
     //hago otro del boton para activar el pincel
     const btnActivado = document.getElementById("pincel")
-    let pincel = true
+    
 
     //boton de limpieza de pizarra
     const btnLimpiar = document.getElementById("limpiar")
 
-    
+
 
     //nodos----------------------------------------------------/
 
     //PINCEL
+    let pincel = true
     //funcion para activado y desactivado del pincel
     btnActivado.addEventListener("click", function () {
         pincel = !pincel
@@ -32,11 +37,21 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
     //PINTAR
-    //recorro los "divs" escuchando cual clico 
+    let pizarra = false
+    //evento que caundo pulsa y mantiene la pizarra se activa
+    zonaDibujo.addEventListener("mouseup", function () {
+        pizarra=!pizarra
+    })
+    //y caundo suelta la pizarra se desactiva
+    zonaDibujo.addEventListener("mousedown", function () {
+        pizarra=!pizarra
+    })
+
+    //recorro los "divs" añadiendole el evento mouseover a cada uno de ellos
     for (var i = 0; i < divs.length; i++) {
 
         divs[i].addEventListener("mouseover", function () {
-            if (pincel) {
+            if (pincel && pizarra) {
                 //saco el color selcecioando en el input y lo aplico
                 let color = document.getElementById("color").value
                 this.style.backgroundColor = color
@@ -44,8 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
         })
 
     }
-
     
+
+
 
     //lIMPIEZA
     //limpieza de pizarra
