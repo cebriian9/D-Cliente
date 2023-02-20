@@ -1,0 +1,109 @@
+<!--
+Enunciado del ejercicio:
+
+Completa el siguiente cÃģdigo con una funciÃģn en javascript que me permita leer el 
+grosor del borde de la tabla mediante un boton.
+-->
+<html>
+
+<head>
+   <title>
+      ejercicio1
+   </title>
+   <script language="javascript">
+
+      function calcularBorde() {
+         //obtengo todo el atributo borde ( "x"px solid (color))
+         let borde = getComputedStyle(document.getElementById("tabla1")).border
+
+         //con match busco el primer numero de esa cadena
+         borde = borde.match(/\d+/)[0]
+
+         //lo combierto en numero
+         borde = Number(borde)
+
+         return borde
+      }
+
+      function mostrarBorde() {
+
+         let borde = calcularBorde()
+
+         document.getElementById("resultado").innerHTML = borde + "px"
+      }
+
+      function disminuirBorde() {
+
+         let borde = calcularBorde()
+
+         if (borde > 1) {
+
+            document.getElementById("tabla1").style.border = (borde - 1) + "px solid black"
+            mostrarBorde()
+         }
+      }
+
+      function aumentarBorde() {
+
+         let borde = calcularBorde()
+
+         document.getElementById("tabla1").style.border = (borde + 1) + "px solid black"
+         mostrarBorde()
+
+      }
+
+
+   </script>
+</head>
+
+<body>
+
+   <table width="300" align="left" id="tabla1" border="2">
+      <tr height="100">
+         <td width="100" align="center">
+            Celda 1
+         </td>
+         <td width="100" align="center">
+            Celda 2
+         </td>
+         <td width="100" align="center">
+            Celda 3
+         </td>
+      </tr>
+      <tr height="100">
+         <td align="center">
+            Celda 4
+         </td>
+         <td align="center">
+            Celda 5
+         </td>
+         <td align="center">
+            Celda 6
+         </td>
+      </tr>
+      <tr height="100">
+         <td align="center">
+            Celda 7
+         </td>
+         <td align="center">
+            Celda 8
+         </td>
+         <td align="center">
+            Celda 9
+         </td>
+      </tr>
+   </table>
+
+   <br>
+   <br>
+   <button onclick="mostrarBorde()">calcular borde</button>
+   <p> Mide: <span id="resultado"></span></p>
+
+   <button onclick="aumentarBorde()">aumentar</button><br>
+   <button onclick="disminuirBorde()">disminuir</button>
+
+
+
+</body>
+
+</html>
