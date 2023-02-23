@@ -95,14 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
 
-
-
     function crearTabla(usuario) {
         let tabla = document.getElementById("tabla")
         if (usuario.superUsuario) {
-
-
-            
 
             tabla.classList.replace("invisible","visible")
 
